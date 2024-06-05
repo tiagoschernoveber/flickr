@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ImageDetailView: View {
-    let image: Image
+    let image: ImageModel
 
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: " ")) { phase in
+            AsyncImage(url: URL(string: image.media.m)) { phase in
                 if let image = phase.image {
                     image
                         .resizable()
@@ -23,17 +23,17 @@ struct ImageDetailView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: 300)
 
-            Text("Title")
+            Text(image.title)
                 .font(.headline)
                 .padding()
 
-            Text("Description")
+            Text(image.description)
                 .padding()
 
-            Text("Author: ")
+            Text("Author: \(image.author)")
                 .padding()
 
-            Text("Published Date:")
+            Text("Published Date: \(image.publishedDate)")
                 .padding()
 
             Spacer()

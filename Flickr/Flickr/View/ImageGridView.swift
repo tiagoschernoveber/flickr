@@ -15,7 +15,7 @@ struct ImageGridView: View {
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                 ForEach(images) { image in
                     NavigationLink(destination: ImageDetailView(image: image)) {
-                        AsyncImage(url: URL(string: " ")) { phase in
+                        AsyncImage(url: URL(string: image.media.m)) { phase in
                             if let image = phase.image {
                                 image
                                     .resizable()
