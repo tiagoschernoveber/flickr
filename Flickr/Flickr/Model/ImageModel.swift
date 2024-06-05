@@ -11,7 +11,7 @@ import Foundation
 
 
 
-struct ImageModel: Codable, Identifiable {
+struct ImageModel: Codable, Identifiable, Hashable {
     var id: UUID {
         return UUID()
     }
@@ -33,6 +33,14 @@ struct ImageModel: Codable, Identifiable {
 
     struct Media: Codable {
         let m: String
+    }
+    
+    func hash(into hasher: inout Hasher) {
+            hasher.combine(id)
+        }
+        
+    static func == (lhs: ImageModel, rhs: ImageModel) -> Bool {
+        lhs.link == rhs.link
     }
 }
 

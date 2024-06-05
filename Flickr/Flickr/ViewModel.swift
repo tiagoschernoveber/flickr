@@ -48,15 +48,18 @@ class ViewModel: ObservableObject {
                     throw URLError(.badServerResponse)
                 }
 
-                let jsonString = String(data: data, encoding: .utf8)?
-                    .replacingOccurrences(of: "\\/", with: "/")
+                let jsonString = String(data: data, encoding: .utf8)
                 
                 guard let cleanedData = jsonString?.data(using: .utf8) else {
                     throw URLError(.badServerResponse)
                 }
                 return cleanedData
             }
-            .decode(type: ResponseModel.self, decoder: decoder)
+            .decode(type: ResponseModel.self, decoder: {
+                            let decoder = JSONDecoder()
+                            decoder.keyDecodingStrategy = .convertFromSnakeCase
+                            return decoder
+                        }())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -67,7 +70,8 @@ class ViewModel: ObservableObject {
                 }
                 self.isLoading = false
             }, receiveValue: { response in
-                self.images = response.items
+                let uniqueImages = Array(Set(response.items))
+                self.images = uniqueImages.map { $0 }
             })
             .store(in: &cancellables)
     }

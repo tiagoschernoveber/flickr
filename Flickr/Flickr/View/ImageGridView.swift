@@ -13,9 +13,9 @@ struct ImageGridView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                ForEach(images) { image in
-                    NavigationLink(destination: ImageDetailView(image: image)) {
-                        AsyncImage(url: URL(string: image.media.m)) { phase in
+                ForEach(0..<min(images.count, 100), id: \.self) { i in
+                    NavigationLink(destination: ImageDetailView(image: images[i])) {
+                        AsyncImage(url: URL(string: images[i].media.m)) { phase in
                             if let image = phase.image {
                                 image
                                     .resizable()
