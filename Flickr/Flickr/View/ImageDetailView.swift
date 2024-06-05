@@ -33,7 +33,7 @@ struct ImageDetailView: View {
             Text("Author: \(image.author)")
                 .padding()
 
-            Text("Published Date: \(image.publishedDate)")
+            Text("Published Date: \(image.published)")
                 .padding()
 
             Spacer()

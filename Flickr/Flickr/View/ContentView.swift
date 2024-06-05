@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = ViewModel()
+    
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(text: .constant(" "))
-
-                //ImageGridView(images: " ")
-                
+                SearchBar(text: $viewModel.search)
+                if viewModel.isLoading {
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                } else {
+                    ImageGridView(images: viewModel.images)
+                }
             }
             .navigationTitle("Search Area")
         }

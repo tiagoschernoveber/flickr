@@ -7,6 +7,10 @@
 
 import Foundation
 
+import Foundation
+
+
+
 struct ImageModel: Codable, Identifiable {
     var id: UUID {
         return UUID()
@@ -14,12 +18,21 @@ struct ImageModel: Codable, Identifiable {
     let title: String
     let link: String
     let media: Media
-    let author: String
-    let date: String
+    let dateTaken: String?
     let description: String
-    let publishedDate: String
+    let published: String
+    let author: String
+    let authorId: String?
+    let tags: String
+
+    enum CodingKeys: String, CodingKey {
+        case title, link, media, description, published, author, tags
+        case dateTaken = "date_taken"
+        case authorId = "author_id"
+    }
 
     struct Media: Codable {
         let m: String
     }
 }
+
