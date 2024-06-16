@@ -27,8 +27,8 @@ struct ImageDetailView: View {
                 .font(.headline)
                 .padding()
 
-            Text(image.description)
-                .padding()
+            WebView(htmlContent: image.description)
+                    .edgesIgnoringSafeArea(.all)
 
             Text("Author: \(image.author)")
                 .padding()

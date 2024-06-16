@@ -20,6 +20,7 @@
 		50C39D7B2C10BF85001248C1 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C39D7A2C10BF85001248C1 /* SearchBar.swift */; };
 		50C39D7D2C10BF9E001248C1 /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C39D7C2C10BF9E001248C1 /* ImageGridView.swift */; };
 		50C39D7F2C10BFC3001248C1 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C39D7E2C10BFC3001248C1 /* ImageDetailView.swift */; };
+		50DAFB292C1E94E100213A38 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAFB282C1E94E100213A38 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		50C39D7A2C10BF85001248C1 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		50C39D7C2C10BF9E001248C1 /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		50C39D7E2C10BFC3001248C1 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		50DAFB282C1E94E100213A38 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				50C39D7A2C10BF85001248C1 /* SearchBar.swift */,
 				50C39D7C2C10BF9E001248C1 /* ImageGridView.swift */,
 				50C39D7E2C10BFC3001248C1 /* ImageDetailView.swift */,
+				50DAFB282C1E94E100213A38 /* WebView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				50C39D7D2C10BF9E001248C1 /* ImageGridView.swift in Sources */,
 				50C39D7B2C10BF85001248C1 /* SearchBar.swift in Sources */,
 				50C39D7F2C10BFC3001248C1 /* ImageDetailView.swift in Sources */,
+				50DAFB292C1E94E100213A38 /* WebView.swift in Sources */,
 				508871282C10C69400AE2701 /* ResponseModel.swift in Sources */,
 				508871262C10C64500AE2701 /* ViewModel.swift in Sources */,
 			);
